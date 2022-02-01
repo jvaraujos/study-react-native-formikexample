@@ -1,6 +1,6 @@
 import './App.css'
 import React from 'react'
-import { Formik, Field, Form } from 'formik'
+import { Formik, Field, Form, ErrorMessage } from 'formik'
 import schema from './schema'
 
 function App() {
@@ -27,19 +27,19 @@ function App() {
           name: '',
           email: ''
         }}
-        render={({ values, errors, touched }) => (
+        render={({ values, errors, touched, isValidated }) => (
           <Form >
             <div>
               <label>Nome</label>
               <Field name="name" type="text" />
-              {errors.name && touched.name && (<span>{errors.name}</span>)}
+              <ErrorMessage name="name"></ErrorMessage>
             </div>
             <div>
               <label>Email</label>
               <Field name="email" type="text" />
-              {errors.email && touched.email && (<span>{errors.email}</span>)}
+              <ErrorMessage name="email"></ErrorMessage>
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" disabled={!isValidated}>Enviar</button>
           </Form>
         )}>
 
