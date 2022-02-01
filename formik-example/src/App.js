@@ -42,11 +42,8 @@ function App() {
             <button type="submit" disabled={!isValidated}>Enviar</button>
           </Form>
         )}>
-
       </Formik>
-
     </div>
   )
 }
-
 export default App;
