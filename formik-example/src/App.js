@@ -27,17 +27,17 @@ function App() {
           name: '',
           email: ''
         }}
-        render={({ values, errors }) => (
+        render={({ values, errors, touched }) => (
           <Form >
             <div>
               <label>Nome</label>
               <Field name="name" type="text" />
-              {errors.name && (<span>{errors.name}</span>)}
+              {errors.name && touched.name && (<span>{errors.name}</span>)}
             </div>
             <div>
               <label>Email</label>
               <Field name="email" type="text" />
-              {errors.email && (<span>{errors.email}</span>)}
+              {errors.email && touched.email && (<span>{errors.email}</span>)}
             </div>
             <button type="submit">Enviar</button>
           </Form>
