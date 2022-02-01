@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 import { Formik, Field, Form } from 'formik'
-
+import schema from './schema'
 
 function App() {
   function onSubmit(values, actions) {
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Formik
-        validate={validate}
+        validationSchema={schema}
         onSubmit={onSubmit}
         initialValues={{
           name: '',
