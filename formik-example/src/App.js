@@ -1,6 +1,6 @@
 import './App.css';
-import React, { useState } from 'react'
-import { Formik, Field } from 'formik';
+import React from 'react'
+import { Formik, Field, Form } from 'formik';
 
 
 function App() {
@@ -16,8 +16,8 @@ function App() {
           name: '',
           email: ''
         }}
-        render={({ values, handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
+        render={({ values }) => (
+          <Form >
             <div>
               <label>Nome</label>
               <Field name="name" type="text" />
@@ -27,7 +27,7 @@ function App() {
               <Field name="email" type="text" />
             </div>
             <button type="submit">Enviar</button>
-          </form>
+          </Form>
         )}>
 
       </Formik>
